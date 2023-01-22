@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MiniGame/Scene/OralitTradisional.unity
+    guid: 260e6f0318987d947b9a65fbea475e99
+  - enabled: 1
+    path: Assets/MiniGame/Scene/KunyitAsam.unity
+    guid: d3e236a7390324f4f93ea5f0f4d230d7
+  - enabled: 1
+    path: Assets/MiniGame/Scene/JamuTemulawak.unity
+    guid: fe1f78d86b35d8141a301a8c44954bac
+  - enabled: 1
+    path: Assets/MiniGame/Scene/JamuBerasKencur.unity
+    guid: 86359a70e7174374fa6130c10c00d4de
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
