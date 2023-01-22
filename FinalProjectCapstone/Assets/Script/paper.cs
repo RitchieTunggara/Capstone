@@ -11,11 +11,11 @@ public class paper : MonoBehaviour
     public GameObject canvasGejalaMasukAngin;
     public GameObject canvasGejalaKulitKusam;
     public GameObject canvasGejalaPegal;
-    public int count;
+    // public int count = -1;
     // Start is called before the first frame update
     void Start()
     {
-        count = 0;
+        // Debug.Log(count);
         WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
     }
 
@@ -32,24 +32,28 @@ public class paper : MonoBehaviour
     {
         if(col.CompareTag("Player"))
         {
+            // Debug.Log(count);
             canvasInstruction.SetActive(true);
             // WayPointFollower.onTag = true;
         }
-        else if (col.CompareTag("npc") && count == 0)
+        else if (col.CompareTag("npc"))
         {
-            canvasGejalaDiare.SetActive(true);
-            // canvasGejalaKulitKusam.SetActive(false);
-            // canvasGejalaMasukAngin.SetActive(false);
-            // canvasGejalaPegal.SetActive(false);
+            canvasGejalaKulitKusam.SetActive(true);
         }
-        else if (col.CompareTag("npc") && count == 1)
+        else if (col.CompareTag("npcDiare"))
+        {
+            canvasGejalaKulitKusam.SetActive(false);
+            canvasGejalaDiare.SetActive(true);
+        }
+        else if (col.CompareTag("npcMasukAngin"))
         {
             canvasGejalaDiare.SetActive(false);
-            canvasGejalaDiare.SetActive(true);
+            canvasGejalaMasukAngin.SetActive(true);
         }
-        else if (col.CompareTag("npc") && count == 0)
+        else if (col.CompareTag("npcPegal"))
         {
-            canvasGejalaDiare.SetActive(true);
+            canvasGejalaMasukAngin.SetActive(false);
+            canvasGejalaPegal.SetActive(true);
         }
     }
 

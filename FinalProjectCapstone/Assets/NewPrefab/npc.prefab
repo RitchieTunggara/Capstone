@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6249336208251353334}
   m_Layer: 0
   m_Name: npc
-  m_TagString: npc
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,13 +101,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 6249336208251353341}
-  npcOnBed: {fileID: 0}
+  npcOnBed: {fileID: 5602443535116671309, guid: 86b9e75a5086c5c43bb062893b2cd604, type: 3}
   waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6344962652462464210, guid: 5672f332562f9fa46b26ada9b603bd15, type: 3}
+  - {fileID: 3079124973635510298, guid: 68507002bab37344c883fa3104ab418d, type: 3}
+  - {fileID: 5082837558397461636, guid: e14cc0a9bc55f124a9ea7a7a9881bd7e, type: 3}
+  - {fileID: 7253777326771526115, guid: b5cc7403d8be7fb45acac684f5a8cf61, type: 3}
+  - {fileID: 1962805542361641535, guid: d86c2a81510edaf4fb009240a373fb2c, type: 3}
   speed: 6
   onTag: 0
   cured: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6249336208251353341}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c480750ae2ae18b448f1362820298b41, type: 3}
   m_Name: 
