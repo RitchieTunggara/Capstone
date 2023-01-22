@@ -19,7 +19,7 @@ public class spawnPaper : MonoBehaviour
 
     void OnTriggerEnter (Collider other)
     {
-        if(other.CompareTag("npc"))
+        if(other.CompareTag("npc") || other.CompareTag("npcDiare") || other.CompareTag("npcMasukAngin") || other.CompareTag("npcPegal"))
         {
             paperComplaints.SetActive(true);
         }

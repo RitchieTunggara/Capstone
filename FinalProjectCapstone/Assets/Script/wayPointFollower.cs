@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class wayPointFollower : MonoBehaviour
 {
+    // paper Paper;
+    // public GameObject paper;
     public GameObject npc;
     public GameObject npcOnBed;
     Rigidbody rb;
     [SerializeField] GameObject[] waypoints;
-    int currentWaypointIndex;
+    public int currentWaypointIndex;
     public float speed = 6f;
     private float zPosition;
     private float xPosition;
-    public bool onTag = false;
+    public bool onTag;
     public bool cured = false;
     private int turnCounter;
     // Start is called before the first frame update
     void Start()
     {
+        // Paper = GameObject.FindGameObjectWithTag("paper").GetComponent<paper>();
+        // Paper.count++;
+        // paper.SetActive(false);
+        onTag = false;
         turnCounter = 0;
         rb = GetComponent<Rigidbody>();
         currentWaypointIndex = 0;
@@ -60,6 +66,7 @@ public class wayPointFollower : MonoBehaviour
 
         if (onTag == true)
         {
+            // Debug.Log(onTag);
             currentWaypointIndex = 2;
         }
 
@@ -78,7 +85,8 @@ public class wayPointFollower : MonoBehaviour
             || transform.position == Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime) && currentWaypointIndex==3)
             {
                 currentWaypointIndex++;
-                Debug.Log(currentWaypointIndex);
+                cured = false;
+                // Debug.Log(currentWaypointIndex);
             }
             if (transform.position == Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime) && currentWaypointIndex==2)
             {
@@ -86,7 +94,7 @@ public class wayPointFollower : MonoBehaviour
                 npcOnBed.SetActive(true);
                 currentWaypointIndex++;
                 onTag = false;
-                Debug.Log(currentWaypointIndex);
+                // Debug.Log(currentWaypointIndex);
             }
         }
     }

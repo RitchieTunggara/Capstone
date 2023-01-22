@@ -9,6 +9,11 @@ TagManager:
   - table
   - paper
   - spawner
+  - bed
+  - npcKulitKusam
+  - npcDiare
+  - npcMasukAngin
+  - npcPegal
   layers:
   - Default
   - TransparentFX
