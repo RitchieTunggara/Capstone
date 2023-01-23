@@ -15,14 +15,14 @@ public class canvasKeluhan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
+    //    WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
     }
 
     public void letNpcToBed()
     {
         if (counter == 0)
         {
-            WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
+            WayPointFollower = GameObject.FindGameObjectWithTag("npcKulitKusam").GetComponent<wayPointFollower>();
             WayPointFollower.onTag = true;
             counter++;
         }

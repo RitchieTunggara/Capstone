@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class paper : MonoBehaviour
 {
-    wayPointFollower WayPointFollower;
+    public GameObject medicineMakerTrigger;
+    // wayPointFollower WayPointFollower;
     public GameObject canvasInstruction;
     public GameObject canvasKeluhan;
     public GameObject canvasGejalaDiare;
@@ -16,7 +17,7 @@ public class paper : MonoBehaviour
     void Start()
     {
         // Debug.Log(count);
-        WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
+        // WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class paper : MonoBehaviour
     {
         if (Input.GetKey (KeyCode.F))
         {
+            medicineMakerTrigger.SetActive(true);
             canvasInstruction.SetActive(false);
             canvasKeluhan.SetActive(true);
         }
@@ -36,7 +38,7 @@ public class paper : MonoBehaviour
             canvasInstruction.SetActive(true);
             // WayPointFollower.onTag = true;
         }
-        else if (col.CompareTag("npc"))
+        else if (col.CompareTag("npcKulitKusam"))
         {
             canvasGejalaKulitKusam.SetActive(true);
         }

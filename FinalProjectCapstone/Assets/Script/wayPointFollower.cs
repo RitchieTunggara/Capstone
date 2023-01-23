@@ -18,8 +18,21 @@ public class wayPointFollower : MonoBehaviour
     public bool cured = false;
     private int turnCounter;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        SaveLoad.Load();
+        if(SaveLoad.data.FirstStart == false)
+        {
+            Debug.Log("tes");
+            speed = 0f;
+        }
+    }
     void Start()
     {
+        // SaveLoad.data.lastNpc = "";
+        // SaveLoad.data.FirstStart = true;
+        SaveLoad.Save();
+
         // Paper = GameObject.FindGameObjectWithTag("paper").GetComponent<paper>();
         // Paper.count++;
         // paper.SetActive(false);
@@ -27,6 +40,11 @@ public class wayPointFollower : MonoBehaviour
         turnCounter = 0;
         rb = GetComponent<Rigidbody>();
         currentWaypointIndex = 0;
+
+        if (!SaveLoad.data.lastNpc.Equals(""))
+        {
+            currentWaypointIndex = 3;
+        }
     }
 
     // Update is called once per frame
@@ -36,8 +54,9 @@ public class wayPointFollower : MonoBehaviour
         xPosition = transform.position.x;
         Vector3 direction = new Vector3(transform.position.x, 0f, transform.position.x).normalized;
         //turn right
-        if (xPosition <= -3.14f && turnCounter == 0)
+        if (xPosition <= -3.14f && turnCounter == 0 && SaveLoad.data.lastNpc.Equals(""))
         {
+            // Debug.Log("tes");
             turnCounter = 1;
             transform.rotation = Quaternion.Euler(-89.706f, 270f, -90.004f);
         }
@@ -72,6 +91,7 @@ public class wayPointFollower : MonoBehaviour
 
         if (cured == true && currentWaypointIndex == 3)
         {
+            Debug.Log("tes");
             transform.rotation = Quaternion.Euler(-89.706f, 90f, -90.004f);
             nextWayPoint();
         }

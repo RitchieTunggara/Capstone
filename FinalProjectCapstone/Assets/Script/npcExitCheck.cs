@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class npcExitCheck : MonoBehaviour
 {
+    queueTimerScript QueueTimerScript;
     curedPatient CuredPatient;
     wayPointFollower WayPointFollower1;
     wayPointFollower WayPointFollower2;
@@ -12,9 +13,12 @@ public class npcExitCheck : MonoBehaviour
     public GameObject npc2;
     public GameObject npc3;
     public GameObject paper;
+    public GameObject CanvasGameOver;
+    public GameObject buttonNext;
     // Start is called before the first frame update
     void Start()
     {
+        SaveLoad.Load();
         CuredPatient = GameObject.FindGameObjectWithTag("bed").GetComponent<curedPatient>();
         WayPointFollower1 = GameObject.FindGameObjectWithTag("npcDiare").GetComponent<wayPointFollower>();
         WayPointFollower2 = GameObject.FindGameObjectWithTag("npcMasukAngin").GetComponent<wayPointFollower>();
@@ -29,13 +33,14 @@ public class npcExitCheck : MonoBehaviour
 
     void OnTriggerEnter (Collider col)
     {
-        if(col.CompareTag("npc"))
+        if(col.CompareTag("npcKulitKusam"))
         {
             CuredPatient.ctr++;
             npc1.SetActive(true);
             paper.SetActive(false);
             WayPointFollower1.speed = 6f;
             WayPointFollower1.currentWaypointIndex = 0;
+            // QueueTimerScript.timeLeft = QueueTimerScript.maxTime;
         }
         else if(col.CompareTag("npcDiare"))
         {
@@ -44,6 +49,7 @@ public class npcExitCheck : MonoBehaviour
             paper.SetActive(false);
             WayPointFollower2.speed = 6f;
             WayPointFollower2.currentWaypointIndex = 0;
+            // QueueTimerScript.timeLeft = QueueTimerScript.maxTime;
         }
         else if(col.CompareTag("npcMasukAngin"))
         {
@@ -52,6 +58,19 @@ public class npcExitCheck : MonoBehaviour
             paper.SetActive(false);
             WayPointFollower3.speed = 6f;
             WayPointFollower3.currentWaypointIndex = 0;
+            // QueueTimerScript.timeLeft = QueueTimerScript.maxTime;
         }
+        else if (col.CompareTag("npcPegal"))
+        {
+            Time.timeScale = 0;
+            CanvasGameOver.SetActive(true);
+            buttonNext.SetActive(true);
+        }
+        SaveLoad.data.lastNpc = "";
+        // SaveLoad.data.queueTimeLeft = SaveLoad.data.maxTimeQueue;
+        SaveLoad.Save();
+        QueueTimerScript = GameObject.FindGameObjectWithTag("queueTimer").GetComponent<queueTimerScript>();
+        QueueTimerScript.timeLeft = QueueTimerScript.maxTime;
+        QueueTimerScript.timerBar.fillAmount = 100;
     }
 }

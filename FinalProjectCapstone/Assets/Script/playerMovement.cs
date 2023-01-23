@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+    public GameObject SetPatientAfterMini;
     Rigidbody rb;
     [SerializeField] float movementSpeed = 5f;
     // [SerializeField] float jumpForce = 5f;
 
     // [SerializeField] Transform groundCheck;
     // [SerializeField] LayerMask ground;
+
+    public float zPosition;
+    public float xPosition;
+
+    private void Awake()
+    {
+        SaveLoad.Load();
+        if (SaveLoad.data.OnBack == true)
+        {
+            transform.position = new Vector3(SaveLoad.data.xPosPLayer, 1.1f, SaveLoad.data.zPosPLayer);
+            SaveLoad.data.OnBack = false;
+            SaveLoad.Save();
+            SetPatientAfterMini.SetActive(true);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
+        // SaveLoad.data.lastNpc = "";
+        // SaveLoad.Save();
+
+        // DontDestroyOnLoad(this.gameObject);
         // Physics.gravity = new Vector3(0, -10F, 0);
         rb = GetComponent<Rigidbody>();
     }
@@ -20,6 +40,9 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        zPosition = transform.position.z;
+        xPosition = transform.position.x;
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 

@@ -14,6 +14,10 @@ TagManager:
   - npcDiare
   - npcMasukAngin
   - npcPegal
+  - DropZone
+  - canvasQueue
+  - queueTimer
+  - exitMini
   layers:
   - Default
   - TransparentFX

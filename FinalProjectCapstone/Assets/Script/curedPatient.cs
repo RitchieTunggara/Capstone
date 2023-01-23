@@ -18,7 +18,7 @@ public class curedPatient : MonoBehaviour
     void Start()
     {
         ctr = 0;
-        WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
+        WayPointFollower = GameObject.FindGameObjectWithTag("npcKulitKusam").GetComponent<wayPointFollower>();
         WayPointFollower2 = GameObject.FindGameObjectWithTag("npcDiare").GetComponent<wayPointFollower>();
         WayPointFollower3 = GameObject.FindGameObjectWithTag("npcMasukAngin").GetComponent<wayPointFollower>();
         WayPointFollower4 = GameObject.FindGameObjectWithTag("npcPegal").GetComponent<wayPointFollower>();

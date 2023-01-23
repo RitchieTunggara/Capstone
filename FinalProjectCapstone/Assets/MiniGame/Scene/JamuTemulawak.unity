@@ -911,9 +911,10 @@ GameObject:
   - component: {fileID: 697394454}
   - component: {fileID: 697394453}
   - component: {fileID: 697394452}
+  - component: {fileID: 697394456}
   m_Layer: 5
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: exitMini
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1000,6 +1001,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &697394456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697394451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8233511c11dd3418ee06b483983fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xPosPlayer: 0
+  zPosPlayer: 0
 --- !u!1001 &784877746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1390,6 +1405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8233511c11dd3418ee06b483983fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xPosPlayer: 0
+  zPosPlayer: 0
 --- !u!114 &996517430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,10 +1451,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 996517429}
+      - m_Target: {fileID: 697394456}
         m_TargetAssemblyTypeName: exitMini, Assembly-CSharp
         m_MethodName: exitScene
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
