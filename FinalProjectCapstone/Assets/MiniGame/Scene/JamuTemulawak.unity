@@ -1013,8 +1013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8233511c11dd3418ee06b483983fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosPlayer: 0
-  zPosPlayer: 0
+  queueTimeLeft: 0
+  countLife: 0
 --- !u!1001 &784877746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1405,8 +1405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8233511c11dd3418ee06b483983fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosPlayer: 0
-  zPosPlayer: 0
+  queueTimeLeft: 0
+  countLife: 0
 --- !u!114 &996517430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,6 +1742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a387f9a0d76e393458c4c66fb2c3bde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Alat: {fileID: 611137799}
   result: {fileID: 1294451717}
   disableBut: {fileID: 996517430}
 --- !u!114 &1049937114
@@ -2703,6 +2704,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1017156942}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1413680554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2798,7 +2811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save Item
+  m_text: Give to Patient
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

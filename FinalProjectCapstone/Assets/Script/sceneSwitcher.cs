@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class sceneSwitcher : MonoBehaviour
 {
+    void Awake()
+    {
+        SaveLoad.Load();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +23,27 @@ public class sceneSwitcher : MonoBehaviour
 
     public void playGame()
     {
+        SaveLoad.data.lastNpc = "";
+        SaveLoad.data.FirstStart = true;
+        SaveLoad.data.CountLife = 0;
+        SaveLoad.data.queueTimeLeft = SaveLoad.data.maxTimeQueue;
+        SaveLoad.data.exitMini = false;
+        SaveLoad.data.trueMed = true;
+        SaveLoad.data.totalCuredPatient = 0;
+        SaveLoad.Save();
         SceneManager.LoadScene("SceneStage1");
     }
 
     public void exitGame()
     {
+        SaveLoad.data.lastNpc = "";
+        SaveLoad.data.FirstStart = true;
+        SaveLoad.data.CountLife = 0;
+        SaveLoad.data.queueTimeLeft = SaveLoad.data.maxTimeQueue;
+        SaveLoad.data.exitMini = false;
+        SaveLoad.data.trueMed = true;
+        SaveLoad.data.totalCuredPatient = 0;
+        SaveLoad.Save();
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }

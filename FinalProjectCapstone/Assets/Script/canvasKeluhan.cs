@@ -9,6 +9,8 @@ public class canvasKeluhan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SaveLoad.Load();
+        counter = SaveLoad.data.totalCuredPatient;
         // WayPointFollower = GameObject.FindGameObjectWithTag("npc").GetComponent<wayPointFollower>();
     }
 

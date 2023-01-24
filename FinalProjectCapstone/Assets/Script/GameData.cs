@@ -13,6 +13,10 @@ public class GameData
     private float QueueTimeLeft;
     private float MaxTimeQueue;
     private int countLife;
+    private bool ExitMini;
+    private string MedicineName;
+    private bool TrueMed;
+    private int TotalCuredPatient;
     // Start is called before the first frame update
     public GameData()
     {
@@ -23,6 +27,10 @@ public class GameData
         LastNpc = "";
         QueueTimeLeft = 0f;
         countLife = 0;
+        ExitMini = false;
+        MedicineName = "";
+        TrueMed = false;
+        TotalCuredPatient = 0;
     }
 
     // Update is called once per frame
@@ -119,6 +127,54 @@ public class GameData
         set
         {
             countLife = value;
+        }
+    }
+
+    public bool exitMini
+    {
+        get
+        {
+            return ExitMini;
+        }
+        set
+        {
+            ExitMini = value;
+        }
+    }
+
+    public string medicineName
+    {
+        get
+        {
+            return MedicineName;
+        }
+        set
+        {
+            MedicineName = value;
+        }
+    }
+
+    public bool trueMed
+    {
+        get
+        {
+            return TrueMed;
+        }
+        set
+        {
+            TrueMed = value;
+        }
+    }
+
+    public int totalCuredPatient
+    {
+        get
+        {
+            return TotalCuredPatient;
+        }
+        set
+        {
+            TotalCuredPatient = value;
         }
     }
 }

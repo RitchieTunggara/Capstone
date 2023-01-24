@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public GameObject SetPatientAfterMini;
+    public AudioSource footstep;
     Rigidbody rb;
     [SerializeField] float movementSpeed = 5f;
     // [SerializeField] float jumpForce = 5f;
@@ -14,6 +15,8 @@ public class playerMovement : MonoBehaviour
 
     public float zPosition;
     public float xPosition;
+
+    bool isMoving = false;
 
     private void Awake()
     {
@@ -62,6 +65,28 @@ public class playerMovement : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(-89.706f, targetAngle - 90f, -90.004f);
+            
+        }
+
+        if (rb.velocity.x != 0 || rb.velocity.z !=0)
+        {
+            isMoving = true;
+        }
+        else 
+        {
+            isMoving = false;
+        }
+
+        if (isMoving)
+        {
+            if (!footstep.isPlaying)
+            {
+                footstep.Play();
+            }
+        }
+        else 
+        {
+            footstep.Stop();
         }
     }
 

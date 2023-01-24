@@ -12,15 +12,15 @@ public class ItemCombiner : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
+        // if (instance == null)
+        // {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        // else
+        // {
+        //     Destroy(gameObject);
+        // }
     }
 
     public bool Combine(ItemHolder item1, ItemHolder item2)

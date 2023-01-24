@@ -853,6 +853,8 @@ MonoBehaviour:
   npcMasukAngin: {fileID: 1363539473}
   npcPegal: {fileID: 570830633}
   canvasQueue: {fileID: 1335312138}
+  npcOnBed: {fileID: 1420048597}
+  medicineTrigger: {fileID: 1362470240}
 --- !u!4 &249051326
 Transform:
   m_ObjectHideFlags: 0
@@ -1611,7 +1613,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 549953778}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 104942241}
+        m_TargetAssemblyTypeName: canvasMedicineMaker, Assembly-CSharp
+        m_MethodName: kunyitAsam
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &549953778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,7 +2103,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 663798871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 104942241}
+        m_TargetAssemblyTypeName: canvasMedicineMaker, Assembly-CSharp
+        m_MethodName: oralitTradisional
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &663798871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2544,6 +2570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 3527385354522262803, guid: d668ab0610f32b54ab4ab8b698dfda83, type: 3}
+      propertyPath: footstep
+      value: 
+      objectReference: {fileID: 2143667234}
     - target: {fileID: 3527385354522262803, guid: d668ab0610f32b54ab4ab8b698dfda83, type: 3}
       propertyPath: SetPatientAfterMini
       value: 
@@ -3915,7 +3945,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1495857477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 104942241}
+        m_TargetAssemblyTypeName: canvasMedicineMaker, Assembly-CSharp
+        m_MethodName: JamuBerasKencur
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1495857477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,6 +5208,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1962805542361641535, guid: d86c2a81510edaf4fb009240a373fb2c, type: 3}
   m_PrefabInstance: {fileID: 511891293}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &2143667234 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1209016687604214045, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+  m_PrefabInstance: {fileID: 4166599053052744498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2144854967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,6 +5381,71 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &4166599053052744498
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1209016687604214045, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2220249a0f351e54d84fa7140ef8a646, type: 3}
+    - target: {fileID: 1209016687604214045, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5824814
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.4216194
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.7142715
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918066142748483718, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380369916431590733, guid: 83b38e272dd727548905b789f7266a30, type: 3}
+      propertyPath: m_Name
+      value: foodstepSound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83b38e272dd727548905b789f7266a30, type: 3}
 --- !u!33 &6249336208646215431
 MeshFilter:
   m_ObjectHideFlags: 0

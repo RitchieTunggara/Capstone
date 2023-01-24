@@ -27,7 +27,7 @@ public class spawnPaper : MonoBehaviour
             CanvasQueue.SetActive(true);
             SaveLoad.data.FirstStart = false;
             SaveLoad.Save();
-            Debug.Log(SaveLoad.data.FirstStart);
+            // Debug.Log(SaveLoad.data.FirstStart);
             SetPatientAfterMini.SetActive(true);
         }
     }

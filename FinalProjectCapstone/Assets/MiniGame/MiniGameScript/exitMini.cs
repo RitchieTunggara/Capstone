@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class exitMini : MonoBehaviour
 {
-    float queueTimeLeft;
-    int countLife;
+    public float queueTimeLeft;
+    public int countLife;
     public void Start()
     {
         SaveLoad.Load();
@@ -30,6 +30,7 @@ public class exitMini : MonoBehaviour
     {
         SaveLoad.data.queueTimeLeft = queueTimeLeft;
         SaveLoad.data.CountLife = countLife;
+        SaveLoad.data.exitMini = true;
         SaveLoad.Save();
         SceneManager.LoadScene("SceneStage1");
     }

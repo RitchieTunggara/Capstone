@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class buttonPress : MonoBehaviour
 {
-    
+    public GameObject Alat;
    public  GameObject result;
     public Button disableBut;
 
@@ -15,11 +15,13 @@ public class buttonPress : MonoBehaviour
         {
             result.SetActive(true);
             disableBut.interactable = false;
+            Alat.SetActive(false);
         }
         else
         {
             result.SetActive(false);
             disableBut.interactable = true;
+            Alat.SetActive(true);
         }
     }
 }

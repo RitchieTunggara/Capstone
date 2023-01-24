@@ -332,6 +332,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 23508614}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &69435126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,7 +1047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save Item
+  m_text: Give to Patient
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2607,6 +2619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a387f9a0d76e393458c4c66fb2c3bde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Alat: {fileID: 611137799}
   result: {fileID: 942623961}
   disableBut: {fileID: 1774166414}
 --- !u!114 &1714069807
@@ -2715,9 +2728,10 @@ GameObject:
   - component: {fileID: 1753663947}
   - component: {fileID: 1753663946}
   - component: {fileID: 1753663945}
+  - component: {fileID: 1753663949}
   m_Layer: 5
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: exitMini
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2804,6 +2818,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1753663949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753663944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8233511c11dd3418ee06b483983fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queueTimeLeft: 0
+  countLife: 0
 --- !u!1 &1754295310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,6 +2932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8233511c11dd3418ee06b483983fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  queueTimeLeft: 0
+  countLife: 0
 --- !u!114 &1774166414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2948,10 +2978,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1774166413}
+      - m_Target: {fileID: 1753663949}
         m_TargetAssemblyTypeName: exitMini, Assembly-CSharp
         m_MethodName: exitScene
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

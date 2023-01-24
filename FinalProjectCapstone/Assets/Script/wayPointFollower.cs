@@ -23,7 +23,7 @@ public class wayPointFollower : MonoBehaviour
         SaveLoad.Load();
         if(SaveLoad.data.FirstStart == false)
         {
-            Debug.Log("tes");
+            // Debug.Log("tes");
             speed = 0f;
         }
     }
@@ -31,11 +31,13 @@ public class wayPointFollower : MonoBehaviour
     {
         // SaveLoad.data.lastNpc = "";
         // SaveLoad.data.FirstStart = true;
+        // SaveLoad.data.CountLife = 0;
+        // SaveLoad.data.queueTimeLeft = SaveLoad.data.maxTimeQueue;
+        // SaveLoad.data.exitMini = false;
+        // SaveLoad.data.trueMed = true;
+        // SaveLoad.data.totalCuredPatient = 0;
         SaveLoad.Save();
 
-        // Paper = GameObject.FindGameObjectWithTag("paper").GetComponent<paper>();
-        // Paper.count++;
-        // paper.SetActive(false);
         onTag = false;
         turnCounter = 0;
         rb = GetComponent<Rigidbody>();
@@ -91,7 +93,7 @@ public class wayPointFollower : MonoBehaviour
 
         if (cured == true && currentWaypointIndex == 3)
         {
-            Debug.Log("tes");
+            // Debug.Log("tes");
             transform.rotation = Quaternion.Euler(-89.706f, 90f, -90.004f);
             nextWayPoint();
         }

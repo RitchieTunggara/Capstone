@@ -16,14 +16,18 @@ public class queueTimerScript : MonoBehaviour
     // public GameObjcet timesUpText;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SaveLoad.Load();
         maxTime = 50f;
         timerBar = GetComponent<Image>();
-        if (SaveLoad.data.OnBack == true)
+        counter = SaveLoad.data.CountLife;
+        if (counter > 0)
         {
-            counter = SaveLoad.data.CountLife;
+            for (int i=0; i<counter; i++)
+            {
+                fail[i].SetActive(false);
+            }
         }
     }
 
@@ -41,14 +45,6 @@ public class queueTimerScript : MonoBehaviour
             timerBar.fillAmount = 100;
             timeLeft = maxTime;
             counter++;
-        }
-
-        if (counter > 0)
-        {
-            for (int i=0; i<counter; i++)
-            {
-                fail[counter].SetActive(false);
-            }
         }
         
         if (counter>=3)

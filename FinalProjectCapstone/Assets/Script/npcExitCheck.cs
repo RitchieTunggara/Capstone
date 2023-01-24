@@ -67,6 +67,8 @@ public class npcExitCheck : MonoBehaviour
             buttonNext.SetActive(true);
         }
         SaveLoad.data.lastNpc = "";
+        SaveLoad.data.trueMed = true;
+        SaveLoad.data.totalCuredPatient = CuredPatient.ctr;
         // SaveLoad.data.queueTimeLeft = SaveLoad.data.maxTimeQueue;
         SaveLoad.Save();
         QueueTimerScript = GameObject.FindGameObjectWithTag("queueTimer").GetComponent<queueTimerScript>();

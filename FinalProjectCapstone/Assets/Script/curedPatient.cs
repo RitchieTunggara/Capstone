@@ -13,11 +13,12 @@ public class curedPatient : MonoBehaviour
     public GameObject npc3;
     public GameObject npc4;
     public GameObject npcOnBed;
-    public int ctr;
+    public int ctr = 0;
     // Start is called before the first frame update
     void Start()
     {
-        ctr = 0;
+        SaveLoad.Load();
+        ctr = SaveLoad.data.totalCuredPatient;
         WayPointFollower = GameObject.FindGameObjectWithTag("npcKulitKusam").GetComponent<wayPointFollower>();
         WayPointFollower2 = GameObject.FindGameObjectWithTag("npcDiare").GetComponent<wayPointFollower>();
         WayPointFollower3 = GameObject.FindGameObjectWithTag("npcMasukAngin").GetComponent<wayPointFollower>();
